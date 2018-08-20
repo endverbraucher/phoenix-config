@@ -1,7 +1,8 @@
-export const hyper: Phoenix.ModifierKey[] = ['cmd', 'ctrl', 'alt'];
+export const hyper: Phoenix.ModifierKey[] = ['ctrl', 'alt', 'cmd'];
 export const hyperShift: Phoenix.ModifierKey[] = [
-	'cmd',
 	'ctrl',
 	'alt',
+	'cmd',
 	'shift',
 ];
+export const padding = 5
