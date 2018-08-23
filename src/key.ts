@@ -1,5 +1,4 @@
 import {hyper, hyperShift} from './config';
-import log from './logger';
 
 const handlers: Map<string, Key> = new Map();
 

@@ -1,5 +1,4 @@
 import {frameRatio, sizeMatches} from './calc';
-import log from './logger';
 
 export {toggleMaximized, clearUnmaximized};
 

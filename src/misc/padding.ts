@@ -1,27 +1,64 @@
 import { padding as paddingSize } from '../config'
 
-export {padding}
+export { padding, windowLocation }
 
-function padding(frame: Rectangle) {
-	// const win = Window.focused()
-	// if (!win) {
-	// 	return {width:0, height:0, x:0, y:0};
-	// }
+enum windowLocation {
+	Left,
+	Middle,
+	Right,
+	Top,
+	Bottom,
+	FullScreen
+}
 
-	// const screen = win.screen().flippedVisibleFrame()
-	// let msg = `Frame: Width=${screen.width}, Height=${screen.height}, X: ${screen.x}, Y:${screen.y}`
-
-	// let modal = Modal.build({
-	// 	duration: 5,
-	// 	text: msg,
-	// 	weight: 16,
-	// });
-	// modal.showCenterOn(Screen.main());
-
+function padding(frame: Rectangle, location: windowLocation): Rectangle {
 	return {
-		width: frame.width - 2 * paddingSize,
-		height: frame.height - 2 * paddingSize,
-		x: frame.x + paddingSize,
-		y: frame.y + paddingSize,
+		width: getWidthWithPadding(frame.width, location),
+		height: getHeightWithPadding(frame.height, location),
+		x: getXwithPadding(frame.x, location),
+		y: getYwithPadding(frame.y, location)
+	}
+}
+
+function getHeightWithPadding(height:number, location: windowLocation): number {
+	switch (location) {
+		case windowLocation.Top:
+		case windowLocation.Bottom:
+			return height - Math.floor(1.5 * paddingSize)
+		default:
+			return height - 2 * paddingSize
+	}
+}
+
+function getWidthWithPadding (width: number, location: windowLocation): number {
+	switch (location) {
+		case windowLocation.Left:
+		case windowLocation.Right:
+			return width - Math.floor(1.5 * paddingSize)
+		case windowLocation.Middle:
+			return width - paddingSize
+		default:
+			return width
+	}
+}
+
+function getXwithPadding (x: number, location: windowLocation): number {
+	switch (location) {
+		case windowLocation.Left:
+			return x + paddingSize
+		case windowLocation.Middle:
+		case windowLocation.Right:
+			return x + Math.floor(paddingSize / 2)
+		default:
+			return x
+	}
+}
+
+function getYwithPadding (y: number, location: windowLocation): number {
+	switch (location) {
+		case windowLocation.Bottom:
+			return y + paddingSize / 2
+		default:
+			return y + paddingSize
 	}
 }

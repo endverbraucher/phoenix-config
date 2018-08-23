@@ -5,4 +5,4 @@ export const hyperShift: Phoenix.ModifierKey[] = [
 	'cmd',
 	'shift',
 ];
-export const padding = 5
+export const padding = 10
