@@ -27,7 +27,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mafredri/phoenix-config.git"
+		"url": "git+https://github.com/endverbraucher/phoenix-config/"
 	},
 	"keywords": [
 		"phoenix",
@@ -36,9 +36,9 @@
 	"author": "Mathias Fredriksson",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/mafredri/phoenix-config/issues"
+		"url": "https://github.com/endverbraucher/phoenix-config/issues"
 	},
-	"homepage": "https://github.com/mafredri/phoenix-config#readme",
+	"homepage": "https://github.com/endverbraucher/phoenix-config#readme",
 	"prettier": {
 		"tabWidth": 4,
 		"useTabs": true,
